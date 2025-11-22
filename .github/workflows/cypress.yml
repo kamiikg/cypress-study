@@ -9,6 +9,8 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container:
+      image: cypress/included:15.6.0
 
     steps:
       - name: Checkout repository
@@ -31,7 +33,7 @@ jobs:
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          browser: chrome  # ou firefox | electron
+          browser: chrome # ou firefox | electron
           # build: 'npm run build'  # Se precisar buildar projeto
           # start: 'npm start'      # Se precisar subir app local
 
